@@ -119,7 +119,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_lengthEqualThree_ISO639LanguageCode_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThat(localeUtilsl.toLocale("abc")).isEqualToComparingFieldByField(new Locale("abc"));
@@ -127,7 +126,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_lengthEqualTwo_ISO639LanguageCode_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThat(localeUtilsl.toLocale("ab")).isEqualToComparingFieldByField(new Locale("ab"));
@@ -137,7 +135,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_lengthEqualTwo_SegmentLengthEqualZero_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThatThrownBy(() -> { localeUtilsl.toLocale("AB"); }).isInstanceOf(IllegalArgumentException.class)
@@ -146,7 +143,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_lengthMortThanThree_SegmentLengthEqualZero_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThatThrownBy(() -> { localeUtilsl.toLocale("abcd"); }).isInstanceOf(IllegalArgumentException.class)
@@ -156,7 +152,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_lengthMortThanThree_SegmentLengthEqualOne_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThatThrownBy(() -> { localeUtilsl.toLocale("ab_"); }).isInstanceOf(IllegalArgumentException.class)
@@ -165,7 +160,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_SegmentLengthEqualTwo_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThatThrownBy(() -> { localeUtilsl.toLocale("ab_cd_ef"); }).isInstanceOf(IllegalArgumentException.class)
@@ -175,7 +169,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_SegmentLengthEqualTwo_matchLanguage_matchCountry_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThat(localeUtilsl.toLocale("ab_CD")).isEqualToComparingFieldByField(new Locale("ab","CD"));
@@ -184,7 +177,6 @@ public class LocaleUtilsTest {
     @Test
     public void should_input_SegmentLengthEqualTwo_matchNumberAreaCode_toLocale_return_value() {
         //given
-        //not start with underline
         //when
         //then
         assertThat(localeUtilsl.toLocale("ab_123")).isEqualToComparingFieldByField(new Locale("ab","123"));
